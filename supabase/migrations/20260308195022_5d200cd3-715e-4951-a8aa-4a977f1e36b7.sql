@@ -1,0 +1,2 @@
+ALTER TABLE public.orders DROP CONSTRAINT IF EXISTS orders_address_id_fkey;
+ALTER TABLE public.orders ADD CONSTRAINT orders_address_id_fkey FOREIGN KEY (address_id) REFERENCES public.user_addresses(id) ON DELETE SET NULL;

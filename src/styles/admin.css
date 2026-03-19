@@ -1,0 +1,135 @@
+/* ===== Admin Dashboard System ===== */
+.admin-dashboard {
+  background: hsl(0 0% 2%);
+  color: white;
+  font-family: var(--font-sans);
+}
+
+.admin-glass-panel {
+  background: hsl(0 0% 5%);
+  border: 1px solid hsl(0 0% 100% / 0.06);
+  border-radius: 1rem;
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  color: hsl(0 0% 100% / 0.4);
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.admin-nav-item:hover {
+  color: hsl(0 0% 100% / 0.7);
+  background: hsl(0 0% 100% / 0.04);
+}
+
+.admin-nav-item.active {
+  color: hsl(45 76% 52%);
+  background: hsl(45 76% 52% / 0.08);
+  border: 1px solid hsl(45 76% 52% / 0.15);
+}
+
+.admin-gold-text {
+  background: linear-gradient(135deg, hsl(45 76% 52%), hsl(42 80% 65%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.admin-gold-gradient-bg {
+  background: linear-gradient(135deg, hsl(45 76% 52%), hsl(42 80% 65%));
+}
+
+.admin-gold-glow {
+  box-shadow: 0 0 20px hsl(45 76% 52% / 0.15);
+}
+
+/* Admin badges */
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.admin-badge-gold {
+  background: hsl(45 76% 52% / 0.12);
+  color: hsl(45 76% 52%);
+  border: 1px solid hsl(45 76% 52% / 0.2);
+}
+
+.admin-badge-neutral {
+  background: hsl(0 0% 100% / 0.06);
+  color: hsl(0 0% 100% / 0.5);
+  border: 1px solid hsl(0 0% 100% / 0.1);
+}
+
+.admin-badge-destructive {
+  background: hsl(0 72% 50% / 0.12);
+  color: hsl(0 72% 60%);
+  border: 1px solid hsl(0 72% 50% / 0.2);
+}
+
+.admin-badge-success {
+  background: hsl(142 71% 45% / 0.12);
+  color: hsl(142 71% 55%);
+  border: 1px solid hsl(142 71% 45% / 0.2);
+}
+
+/* Admin progress bars */
+.admin-progress-bar {
+  height: 4px;
+  background: hsl(0 0% 100% / 0.06);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.admin-progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, hsl(45 76% 52%), hsl(42 80% 65%));
+  transition: width 0.5s ease;
+}
+
+.admin-progress-fill.critical {
+  background: linear-gradient(90deg, hsl(0 72% 50%), hsl(0 72% 60%));
+}
+
+/* Admin table styling */
+.admin-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-dashboard table thead tr {
+  border-bottom: 1px solid hsl(0 0% 100% / 0.06);
+}
+
+.admin-dashboard table th {
+  padding: 0.875rem 1.25rem;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: hsl(0 0% 100% / 0.3);
+  white-space: nowrap;
+}
+
+.admin-dashboard table td {
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid hsl(0 0% 100% / 0.04);
+  vertical-align: middle;
+}
+
+.admin-dashboard table tbody tr:hover {
+  background: hsl(0 0% 100% / 0.02);
+}

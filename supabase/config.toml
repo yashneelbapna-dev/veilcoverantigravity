@@ -1,0 +1,37 @@
+project_id = "epwgpgydpwakwvnsmbzu"
+
+[functions.send-order-confirmation]
+verify_jwt = false
+
+[functions.phonepe-initiate]
+verify_jwt = false
+
+[functions.phonepe-verify]
+verify_jwt = false
+
+[functions.phonepe-callback]
+verify_jwt = false
+
+[functions.admin-list-storage]
+verify_jwt = false
+
+[functions.send-order-status]
+verify_jwt = false
+
+[functions.newsletter-subscribe]
+verify_jwt = false
+
+[functions.send-order-email]
+verify_jwt = false
+
+[functions.password-reset]
+verify_jwt = false
+
+[functions.send-contact-notification]
+verify_jwt = false
+
+[functions.claim-discount]
+verify_jwt = false
+
+[functions.veil-chat]
+verify_jwt = false
