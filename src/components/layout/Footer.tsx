@@ -11,7 +11,7 @@ const Footer = forwardRef<HTMLElement>((_props, ref) => {
     if (!email.trim()) return;
     setStatus('loading');
     try {
-      await fetch("https://freeautomation.app.n8n.cloud/webhook/newsletter-signup", {
+      await fetch("https://freeautomation.app.n8n.cloud/webhook-test/newsletter-signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         mode: "no-cors",
