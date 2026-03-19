@@ -5,8 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { motion } from "framer-motion";
 
 const contactInfo = [
   {
@@ -57,7 +58,6 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Save to database
       const { error: dbError } = await (supabase as any)
         .from('contact_submissions')
         .insert({
@@ -69,7 +69,6 @@ const Contact = () => {
 
       if (dbError) throw dbError;
 
-      // Send admin email notification
       try {
         await supabase.functions.invoke('send-contact-notification', {
           body: {
@@ -81,7 +80,6 @@ const Contact = () => {
         });
       } catch (emailErr) {
         console.error("Email notification failed:", emailErr);
-        // Don't block the user - submission was saved
       }
 
       toast({
@@ -105,30 +103,37 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-secondary">
-        <div className="container-veil text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-card/40" />
+        <div className="absolute inset-0 noise-texture" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-accent/5 blur-[100px] rounded-full" />
+
+        <div className="container-veil text-center relative z-10">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-xs font-semibold uppercase tracking-[0.35em] text-accent mb-4">
+            We're Here To Help
+          </motion.p>
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
             Get in Touch
-          </h1>
-          <p className="text-base text-muted-foreground max-w-lg mx-auto">
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-base text-muted-foreground max-w-lg mx-auto">
             Have a question or feedback? We'd love to hear from you.
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-24">
         <div className="container-veil">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Contact Form */}
-            <div>
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">
                 Send us a message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-sm font-medium text-foreground">Name</Label>
+                    <Label htmlFor="name" className="text-sm font-semibold text-foreground">Name</Label>
                     <Input
                       id="name"
                       name="name"
@@ -136,11 +141,11 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="Your name"
                       required
-                      className="bg-card border-border rounded-lg h-11"
+                      className="bg-card border-border rounded-xl h-12 focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm font-medium text-foreground">Email</Label>
+                    <Label htmlFor="email" className="text-sm font-semibold text-foreground">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -149,12 +154,12 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="you@example.com"
                       required
-                      className="bg-card border-border rounded-lg h-11"
+                      className="bg-card border-border rounded-xl h-12 focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-sm font-medium text-foreground">Subject</Label>
+                  <Label htmlFor="subject" className="text-sm font-semibold text-foreground">Subject</Label>
                   <Input
                     id="subject"
                     name="subject"
@@ -162,11 +167,11 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="How can we help?"
                     required
-                    className="bg-card border-border rounded-lg h-11"
+                    className="bg-card border-border rounded-xl h-12 focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-sm font-medium text-foreground">Message</Label>
+                  <Label htmlFor="message" className="text-sm font-semibold text-foreground">Message</Label>
                   <Textarea
                     id="message"
                     name="message"
@@ -175,32 +180,39 @@ const Contact = () => {
                     placeholder="Tell us more..."
                     rows={6}
                     required
-                    className="bg-card border-border resize-none rounded-lg"
+                    className="bg-card border-border resize-none rounded-xl focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
                   />
                 </div>
-                <Button
+                <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-gold w-full py-3 rounded-full text-sm font-semibold"
+                  className="btn-gold w-full py-4 rounded-full text-sm font-semibold flex items-center justify-center gap-2"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
+                  {isSubmitting ? "Sending..." : <><Send className="h-4 w-4" /> Send Message</>}
+                </button>
               </form>
-            </div>
+            </motion.div>
 
             {/* Contact Info */}
-            <div>
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">
                 Contact Information
               </h2>
               <div className="space-y-6 mb-10">
-                {contactInfo.map((item) => (
-                  <div key={item.label} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center flex-shrink-0">
+                {contactInfo.map((item, i) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                    className="flex items-start gap-4 group"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-card border border-border flex items-center justify-center flex-shrink-0 group-hover:border-accent/30 group-hover:bg-accent/5 transition-all duration-300">
                       <item.icon className="w-5 h-5 text-accent" />
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">{item.label}</p>
+                      <p className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] font-semibold mb-1">{item.label}</p>
                       {item.href ? (
                         <a
                           href={item.href}
@@ -212,20 +224,20 @@ const Contact = () => {
                         <p className="text-sm text-foreground">{item.value}</p>
                       )}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
               {/* Map Placeholder */}
-              <div className="aspect-video bg-card border border-border rounded-xl overflow-hidden">
+              <div className="aspect-video bg-card border border-border rounded-2xl overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80"
                   alt="Location map"
-                  className="w-full h-full object-cover opacity-60"
+                  className="w-full h-full object-cover opacity-50 hover:opacity-70 transition-opacity duration-500"
                   loading="lazy"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

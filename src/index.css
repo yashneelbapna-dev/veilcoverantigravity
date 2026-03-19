@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap');
+
 @layer base {
   :root {
-    /* VEIL Light Theme */
+    /* VEIL Stitch Redesign — Light Theme */
     --background: 0 0% 98%;
     --foreground: 0 0% 8%;
 
@@ -23,7 +25,7 @@
     --muted: 0 0% 93%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 37 47% 50%;
+    --accent: 37 41% 63%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 50%;
@@ -34,14 +36,14 @@
 
     --border: 0 0% 88%;
     --input: 0 0% 88%;
-    --ring: 37 47% 50%;
+    --ring: 37 41% 63%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --gold: 37 47% 50%;
+    --gold: 37 41% 63%;
     --gold-foreground: 0 0% 100%;
 
-    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-sans: 'Manrope', ui-sans-serif, system-ui, -apple-system, sans-serif;
     --font-display: 'Playfair Display', ui-serif, Georgia, serif;
 
     --glass-bg: 0 0% 100% / 0.85;
@@ -55,7 +57,7 @@
 
     --spacing: 0.25rem;
 
-    --chart-1: 37 47% 50%;
+    --chart-1: 37 41% 63%;
     --chart-2: 0 0% 25%;
     --chart-3: 0 0% 45%;
     --chart-4: 0 0% 60%;
@@ -63,36 +65,36 @@
 
     --sidebar: 0 0% 97%;
     --sidebar-foreground: 0 0% 8%;
-    --sidebar-primary: 37 47% 50%;
+    --sidebar-primary: 37 41% 63%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 93%;
     --sidebar-accent-foreground: 0 0% 8%;
     --sidebar-border: 0 0% 88%;
-    --sidebar-ring: 37 47% 50%;
+    --sidebar-ring: 37 41% 63%;
   }
 
   .dark {
-    /* VEIL Luxury Dark Design System */
-    --background: 0 0% 3%;
-    --foreground: 0 0% 100%;
+    /* VEIL Stitch Redesign — Luxury Dark Design System */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 3%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 12%;
+    --muted: 0 0% 13%;
     --muted-foreground: 0 0% 53%;
 
-    --accent: 37 47% 60%;
-    --accent-foreground: 0 0% 3%;
+    --accent: 37 41% 63%;
+    --accent-foreground: 0 0% 4%;
 
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -100,17 +102,17 @@
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
 
-    --border: 0 0% 12%;
-    --input: 0 0% 12%;
-    --ring: 37 47% 60%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 37 41% 63%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --gold: 37 47% 60%;
-    --gold-foreground: 0 0% 3%;
+    --gold: 37 41% 63%;
+    --gold-foreground: 0 0% 4%;
 
-    --glass-bg: 0 0% 3% / 0.85;
-    --glass-border: 0 0% 100% / 0.06;
+    --glass-bg: 0 0% 4% / 0.88;
+    --glass-border: 0 0% 100% / 0.08;
 
     --shadow-sm: 0 1px 3px 0 hsl(0 0% 0% / 0.5);
     --shadow: 0 2px 8px 0 hsl(0 0% 0% / 0.5);
@@ -118,20 +120,20 @@
     --shadow-lg: 0 8px 24px 0 hsl(0 0% 0% / 0.6);
     --shadow-xl: 0 16px 48px 0 hsl(0 0% 0% / 0.7);
 
-    --chart-1: 37 47% 60%;
+    --chart-1: 37 41% 63%;
     --chart-2: 0 0% 85%;
     --chart-3: 0 0% 65%;
     --chart-4: 0 0% 45%;
     --chart-5: 0 0% 25%;
 
-    --sidebar: 0 0% 5%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 37 47% 60%;
-    --sidebar-primary-foreground: 0 0% 3%;
-    --sidebar-accent: 0 0% 12%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 12%;
-    --sidebar-ring: 37 47% 60%;
+    --sidebar: 0 0% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 37 41% 63%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 13%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 37 41% 63%;
   }
 }
 
@@ -151,11 +153,11 @@
 }
 
 @layer components {
-  /* Frosted glass navbar */
+  /* ═══════ FROSTED GLASS ═══════ */
   .glass-navbar {
     background: hsl(var(--glass-bg));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
   }
 
   .glass-card {
@@ -165,12 +167,13 @@
     border: 1px solid hsl(var(--glass-border));
   }
 
-  /* Gold CTA button with shimmer sweep */
+  /* ═══════ GOLD CTA BUTTON WITH SHIMMER ═══════ */
   .btn-gold {
     background: hsl(var(--gold));
     color: hsl(var(--gold-foreground));
     font-weight: 600;
-    transition: all 0.3s ease;
+    letter-spacing: 0.03em;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
   }
@@ -182,8 +185,8 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.25), transparent);
-    transition: left 0.5s ease;
+    background: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.3), transparent);
+    transition: left 0.6s ease;
   }
 
   .btn-gold:hover::before {
@@ -191,62 +194,72 @@
   }
 
   .btn-gold:hover {
-    box-shadow: 0 0 24px hsl(37 47% 60% / 0.35);
+    box-shadow: 0 0 32px hsl(37 41% 63% / 0.4), 0 4px 16px hsl(37 41% 63% / 0.2);
+    transform: translateY(-1px);
   }
 
-  /* Ghost button */
+  .btn-gold:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* ═══════ GHOST BUTTON ═══════ */
   .btn-ghost-veil {
-    border: 1px solid hsl(var(--foreground) / 0.25);
+    border: 1px solid hsl(var(--foreground) / 0.2);
     color: hsl(var(--foreground));
     font-weight: 500;
+    letter-spacing: 0.03em;
     transition: all 0.3s ease;
   }
 
   .btn-ghost-veil:hover {
-    border-color: hsl(var(--foreground));
-    background: hsl(var(--foreground) / 0.05);
+    border-color: hsl(var(--accent));
+    color: hsl(var(--accent));
+    background: hsl(var(--accent) / 0.06);
   }
 
-  /* Cart badge */
+  /* ═══════ CART BADGE ═══════ */
   .cart-badge {
     background: hsl(var(--gold)) !important;
     color: hsl(var(--gold-foreground)) !important;
     font-weight: 700;
   }
 
-  /* Product card glow */
+  /* ═══════ PRODUCT CARDS ═══════ */
   .product-card-glow {
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .product-card-glow:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 0 1px hsl(37 47% 60% / 0.25), var(--shadow-lg);
+    transform: translateY(-6px);
+    box-shadow:
+      0 0 0 1px hsl(37 41% 63% / 0.15),
+      0 20px 40px hsl(0 0% 0% / 0.15),
+      0 0 24px hsl(37 41% 63% / 0.08);
   }
 
-  /* Marquee */
+  /* ═══════ MARQUEE ═══════ */
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
 
   .animate-marquee {
-    animation: marquee 25s linear infinite;
+    animation: marquee 30s linear infinite;
   }
 
   .animate-marquee:hover {
     animation-play-state: paused;
   }
 
-  /* Gold text gradient */
+  /* ═══════ GOLD TEXT GRADIENT ═══════ */
   .gold-text {
-    background: linear-gradient(135deg, hsl(37 47% 60%), hsl(37 65% 72%));
+    background: linear-gradient(135deg, hsl(37 41% 63%), hsl(37 58% 75%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Nav link underline */
+  /* ═══════ NAV UNDERLINE ═══════ */
   .nav-link-underline {
     position: relative;
   }
@@ -257,16 +270,67 @@
     bottom: -2px;
     left: 0;
     width: 0;
-    height: 1px;
+    height: 1.5px;
     background: hsl(var(--gold));
-    transition: width 0.3s ease;
+    transition: width 0.35s ease;
   }
 
   .nav-link-underline:hover::after {
     width: 100%;
   }
 
+  /* ═══════ HERO ORB ANIMATION ═══════ */
+  @keyframes hero-orb {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.08; }
+    50% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.12; }
+  }
 
+  .hero-orb {
+    animation: hero-orb 8s ease-in-out infinite;
+  }
+
+  @keyframes hero-orb-2 {
+    0%, 100% { transform: scale(1); opacity: 0.04; }
+    50% { transform: scale(1.2); opacity: 0.07; }
+  }
+
+  .hero-orb-2 {
+    animation: hero-orb-2 12s ease-in-out infinite;
+  }
+
+  /* ═══════ SECTION DIVIDER ═══════ */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.2), transparent);
+  }
+
+  /* ═══════ COLLECTION CARD OVERLAY ═══════ */
+  .collection-overlay {
+    background: linear-gradient(to top, hsl(var(--background) / 0.95) 0%, hsl(var(--background) / 0.4) 50%, transparent 100%);
+  }
+
+  /* ═══════ NOISE TEXTURE ═══════ */
+  .noise-texture {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  /* ═══════ COUNTDOWN BLOCK ═══════ */
+  .countdown-num {
+    font-family: var(--font-display);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  /* ═══════ STITCH SCROLLBAR HIDE ═══════ */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer utilities {
@@ -275,7 +339,7 @@
   }
 
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-16 sm:py-20 lg:py-28;
   }
 
   .font-display {
@@ -286,6 +350,7 @@
   html {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+    scroll-behavior: smooth;
   }
 
   ::-webkit-scrollbar {
@@ -325,10 +390,12 @@ img {
 
 /* Button states */
 button:focus-visible, a:focus-visible {
-  outline: 2px solid hsl(37 47% 60%);
+  outline: 2px solid hsl(37 41% 63%);
   outline-offset: 2px;
 }
 
-button:active {
-  transform: scale(0.97);
+/* Selection */
+::selection {
+  background: hsl(37 41% 63% / 0.25);
+  color: hsl(var(--foreground));
 }
