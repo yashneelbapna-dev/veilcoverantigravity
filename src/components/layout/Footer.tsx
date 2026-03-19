@@ -11,11 +11,14 @@ const Footer = forwardRef<HTMLElement>((_props, ref) => {
     if (!email.trim()) return;
     setStatus('loading');
     try {
-      await fetch("https://hooks.zapier.com/hooks/catch/26220162/u00o6nq/", {
+      await fetch("https://freeautomation.app.n8n.cloud/webhook-test/newsletter-signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         mode: "no-cors",
-        body: JSON.stringify({ email: email.trim().toLowerCase(), subscribed_at: new Date().toISOString(), source: "footer" }),
+        body: JSON.stringify({
+          email: email.trim().toLowerCase(),
+          timestamp: new Date().toISOString(),
+        }),
       });
       setStatus('success');
       setEmail("");
