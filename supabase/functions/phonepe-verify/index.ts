@@ -15,7 +15,9 @@ const PHONEPE_BASE_URL = "https://api-preprod.phonepe.com/apis/pg-sandbox";
 // Restrict CORS to production and development origins
 const ALLOWED_ORIGINS = [
   "https://veilcover.lovable.app",
-  "https://id-preview--cd4d1662-9d5c-4f46-9ba5-abdece17be90.lovable.app",
+  "https://veilcoverantigravity.vercel.app",
+  "http://localhost:5173",
+  "http://localhost:8080",
 ];
 
 const getCorsHeaders = (origin: string | null) => {
