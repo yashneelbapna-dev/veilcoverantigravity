@@ -3,8 +3,8 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { encode as base64Encode } from "https://deno.land/std@0.190.0/encoding/base64.ts";
 
-const PHONEPE_MERCHANT_ID = Deno.env.get("PHONEPE_MERCHANT_ID")!;
-const PHONEPE_SALT_KEY = Deno.env.get("PHONEPE_SALT_KEY")!;
+const PHONEPE_MERCHANT_ID = Deno.env.get("PHONEPE_MERCHANT_ID") || "M238RDYVGI2H3_2601202151";
+const PHONEPE_SALT_KEY = Deno.env.get("PHONEPE_SALT_KEY") || "YzAxMzJjOGItZmYyMS00NmE3LTgwZDAtMzJhNjA2M2E4YTk5";
 const PHONEPE_SALT_INDEX = Deno.env.get("PHONEPE_SALT_INDEX") || "1";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
